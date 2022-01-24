@@ -5,6 +5,9 @@ services:
     container_name: api-express-server
     build:
       context: ./
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./nodemon.json:/usr/src/app/nodemon.json
     ports:
       - '4001:4001'
     networks:

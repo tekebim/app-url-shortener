@@ -25,4 +25,5 @@ RUN yarn build
 EXPOSE 4001
 
 # Run commands
-CMD ["node", "dist/src/app.js"]
+# CMD ["node","dist/src/app.js"]
+CMD ["yarn","dev"]

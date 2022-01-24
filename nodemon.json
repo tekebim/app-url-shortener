@@ -1,4 +1,5 @@
 {
+  "verbose": true,
   "restartable": "rs",
   "ignore": [
     ".git",
@@ -9,10 +10,10 @@
     "*.spec.ts"
   ],
   "watch": [
-    "src/"
+    "src/**/*.ts"
   ],
   "execMap": {
-    "ts": "node -r tsconfig-paths/register -r ts-node/register"
+    "ts": "node --no-lazy -r tsconfig-paths/register -r ts-node/register"
   },
   "env": {
     "NODE_ENV": "development"
