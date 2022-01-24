@@ -6,7 +6,7 @@ services:
     build:
       context: ./
     ports:
-      - '4021:4001'
+      - '4001:4001'
     networks:
       - mern-app
   # Mongodb
