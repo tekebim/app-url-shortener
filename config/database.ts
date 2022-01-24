@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
 import config from 'config';
+import mongoose from 'mongoose';
 
-async function database() {
-    const dbUri: string = config.get('dbUri');
+async function connectDatabase() {
     try {
+        const dbUri: string = config.get('dbUri');
         await mongoose
             .connect(dbUri)
             .then(() => {
@@ -11,7 +11,9 @@ async function database() {
             });
     } catch (e) {
         console.error(e);
+        // Exit process with failure
+        process.exit(1);
     }
 }
 
-export default database;
+export default connectDatabase;
