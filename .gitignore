@@ -6,3 +6,7 @@ node_modules
 # Output build dir
 build
 dist
+
+.env
+.env.*
+!.env.example

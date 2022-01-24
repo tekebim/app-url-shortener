@@ -1,4 +1,4 @@
 export default {
-    port: 4001,
-    dbUri: "mongodb://mongodb:27017/url-shortener",
+    port: 3000,
+    databaseURI: "mongodb://localhost:27017/url-shortener",
 };
