@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  # api service
+  api-server:
+    container_name: api-express-server
+    build:
+      context: ./
+    ports:
+      - '4021:4001'
+    networks:
+      - mern-app
+  # Mongodb
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    networks:
+      - mern-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
+
