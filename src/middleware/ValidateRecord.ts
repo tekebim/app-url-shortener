@@ -1,7 +1,7 @@
 import {AnyObjectSchema} from "yup";
 import {Request, Response, NextFunction} from "express";
 
-const validateResource = (resourceSchema: AnyObjectSchema) => async (
+const validateRecord = (resourceSchema: AnyObjectSchema) => async (
     req: Request,
     res: Response,
     next: NextFunction
@@ -18,4 +18,4 @@ const validateResource = (resourceSchema: AnyObjectSchema) => async (
     }
 };
 
-export default validateResource;
+export default validateRecord;
