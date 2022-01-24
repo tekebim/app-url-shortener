@@ -10,7 +10,7 @@ const port = config.get('port');
 app.use(bodyParser.json());
 
 app.listen(port, () => {
-    console.log(`Application is listening on ${port}`);
+    console.log(`Application is listening on ${port} !`);
     database();
     routes(app);
 })
