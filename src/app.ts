@@ -1,8 +1,8 @@
 import express from 'express';
 import config from 'config';
-import routes from "./routes";
-import database from "./database";
 import bodyParser from "body-parser";
+import routes from "@routes/index";
+import database from "./database";
 
 const app = express();
 const port = config.get('port');

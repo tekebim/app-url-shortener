@@ -12,8 +12,17 @@
       "@models/*": [
         "./src/models/*"
       ],
+      "@routes/*": [
+        "./src/routes/*"
+      ],
       "@controllers/*": [
         "./src/controllers/*"
+      ],
+      "@middleware/*": [
+        "./src/middleware/*"
+      ],
+      "@schemas/*": [
+        "./src/schemas/*"
       ]
     },
     "outDir": "./dist",
