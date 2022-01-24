@@ -1,14 +1,14 @@
-import mongoose, {Document} from "mongoose";
+import {Document, Model, model, Schema} from "mongoose";
 import {customAlphabet} from 'nanoid';
 
-const generateCustomNanoId = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 9);
-
-export interface ShortURL extends Document {
+export interface IShortURL extends Document {
     shortId: string;
     destination: string;
 }
 
-const schema = new mongoose.Schema({
+const generateCustomNanoId = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 9);
+
+const shortUrlSchema: Schema = new Schema({
     shortId: {
         type: String,
         unique: true,
@@ -21,6 +21,6 @@ const schema = new mongoose.Schema({
     }
 });
 
-const shortUrl = mongoose.model<ShortURL>('shortUrl', schema);
+const ShortUrl: Model<IShortURL> = model('shortUrl', shortUrlSchema);
 
-export default shortUrl;
+export default ShortUrl;

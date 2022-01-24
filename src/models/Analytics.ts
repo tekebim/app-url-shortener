@@ -1,14 +1,14 @@
-import mongoose, {Document} from "mongoose";
-import {ShortURL} from "@models/ShortUrl";
+import {Document, Model, model, Schema} from "mongoose";
+import {IShortURL} from "@models/ShortUrl";
 
-interface Analytics extends Document {
-    shortUrl: ShortURL;
+interface IAnalytics extends Document {
+    shortUrl: IShortURL;
 }
 
-const schema = new mongoose.Schema(
+const analyticsSchema: Schema = new Schema(
     {
         shortUrl: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: "shortUrl",
             required: true,
         }
@@ -18,6 +18,6 @@ const schema = new mongoose.Schema(
     }
 );
 
-const analytics = mongoose.model<Analytics>("analytics", schema);
+const Analytics: Model<IAnalytics> = model("analytics", analyticsSchema);
 
-export default analytics;
+export default Analytics;
