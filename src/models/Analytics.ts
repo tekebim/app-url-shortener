@@ -1,4 +1,4 @@
-import {Document, Model, model, Schema} from "mongoose";
+import {Document, Model, model, Schema, Types} from "mongoose";
 import {IShortURL} from "@models/ShortUrl";
 
 interface IAnalytics extends Document {
@@ -8,7 +8,7 @@ interface IAnalytics extends Document {
 const analyticsSchema: Schema = new Schema(
     {
         shortUrl: {
-            type: Schema.Types.ObjectId,
+            type: Types.ObjectId,
             ref: "shortUrl",
             required: true,
         }
@@ -18,6 +18,6 @@ const analyticsSchema: Schema = new Schema(
     }
 );
 
-const Analytics: Model<IAnalytics> = model("analytics", analyticsSchema);
+const analytics: Model<IAnalytics> = model("Analytics", analyticsSchema);
 
-export default Analytics;
+export default analytics;

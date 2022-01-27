@@ -21,6 +21,6 @@ const shortUrlSchema: Schema = new Schema({
     }
 });
 
-const ShortUrl: Model<IShortURL> = model('shortUrl', shortUrlSchema);
+const shortUrl: Model<IShortURL> = model('ShortUrl', shortUrlSchema);
 
-export default ShortUrl;
+export default shortUrl;
