@@ -1,0 +1,22 @@
+{
+  "verbose": true,
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/",
+    "dist/",
+    "coverage/",
+    "*.test.ts",
+    "*.spec.ts"
+  ],
+  "watch": [
+    "src/**/*.ts"
+  ],
+  "execMap": {
+    "ts": "node --no-lazy -r tsconfig-paths/register -r ts-node/register"
+  },
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json,ts"
+}
