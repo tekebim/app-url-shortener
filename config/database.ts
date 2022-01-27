@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-function connectDatabase(databaseUri: string) {
+async function connectDatabase(databaseUri: string) {
     try {
-        mongoose
+        await mongoose
             .connect(databaseUri)
             .then(() => {
                 console.log(`Database connected to ${databaseUri}`);
